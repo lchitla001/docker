@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: lchitladocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lchitladocker
+  template:
+    metadata:
+      labels:
+        app: lchitladocker 
+    spec:
+      containers:
+        - name: lchitladocker 
+          image: mycluster1.azurecr.io/lchitladocker
+          ports:
+          - containerPort: 5000
